@@ -37,12 +37,25 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 7,
+              "apiKeyExpirationDate": "2022-05-05T04:57:15.655Z",
+              "description": "todos"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
+    }
+  },
+  "storage": {
+    "s3amplifyjsappstorage64f1b352": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   }
 }
