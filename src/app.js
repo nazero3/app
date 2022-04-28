@@ -1,7 +1,7 @@
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 
 import awsconfig from "./aws-exports";
-//import { createTodo } from "./graphql/mutations";
+import { createTodo } from "./graphql/mutations";
 
 Amplify.configure(awsconfig);
 
