@@ -1,24 +1,19 @@
-import Amplify, { API, graphqlOperation } from "aws-amplify";
-
-import awsconfig from "./aws-exports";
-import { createTodo } from "./graphql/mutations";
-
+import Amplify, { API, graphqlOperation } from 'aws-amplify';
+//import { createTodo, updateTodo, deleteTodo } from './graphql/mutations';
+import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 
-async function createNewTodo() {
-  const todo = {
-    name: "Use AppSync",
-    description: `Realtime and Offline (${new Date().toLocaleString()})`,
-  };
 
-  return await API.graphql(graphqlOperation(createTodo, { input: todo }));
-}
+//import { amplifyjsapp } from 'aws-amplify';
 
-const MutationButton = document.getElementById("MutationEventButton");
-const MutationResult = document.getElementById("MutationResult");
 
-MutationButton.addEventListener("click", (evt) => {
-  createNewTodo().then((evt) => {
-    MutationResult.innerHTML += `<p>${evt.data.createTodo.name} - ${evt.data.createTodo.description}</p>`;
-  });
-});
+const todo = { name: "My first todo", description: "Hello world!" };
+
+/* create a todo */
+//await API.graphql(graphqlOperation(createTodo, {input: todo}));
+
+/* update a todo */
+//await API.graphql(graphqlOperation(updateTodo, { input: { id: todoId, name: "Updated todo info" }}));
+
+/* delete a todo */
+//await API.graphql(graphqlOperation(deleteTodo, { input: { id: todoId }}));

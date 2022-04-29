@@ -1,4 +1,20 @@
-type FirstModel @model @auth(rules: [{allow: public}]) {
+type Comment @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String!
+  desc: String
+  todos: [CommentTodo] @connection(keyName: "byComment", fields: ["id"])
 }
+
+type Todo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  desc: String!
+  comments: [CommentTodo] @connection(keyName: "byTodo", fields: ["id"])
+}
+
+type CommentTodo @model(queries: null) @key(name: "byComment", fields: ["commentID", "todoID"]) @key(name: "byTodo", fields: ["todoID", "commentID"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  commentID: ID!
+  todoID: ID!
+  comment: Comment! @connection(fields: ["commentID"])
+  todo: Todo! @connection(fields: ["todoID"])
+}
+ 

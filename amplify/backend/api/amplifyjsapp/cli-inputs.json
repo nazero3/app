@@ -3,12 +3,11 @@
   "serviceConfiguration": {
     "apiName": "amplifyjsapp",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "C:\\Users\\nazer\\amplify-js-app\\amplify\\backend\\api\\amplifyjsapp\\schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-77f06425-3656-4b8b-b5cc-d2a6ee81a8a0/amplify/backend/api/amplifyjsapp/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7,
-      "apiKeyExpirationDate": "2022-05-05T04:57:15.655Z",
-      "keyDescription": "todos"
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
     "additionalAuthTypes": [
       {
